@@ -266,7 +266,7 @@ export function styleOutputFile(
   }
 
   // Generate the final JSON content with proper indentation
-  const content = JSON.stringify(tokenObject, null, exportConfiguration.indent)
+  const content = `${JSON.stringify(tokenObject, null, exportConfiguration.indent)}\n`
 
   // Create and return the output file with appropriate path and name
   return FileHelper.createTextFile({
@@ -380,7 +380,7 @@ export function combinedStyleOutputFile(
   }
 
   // Generate the final JSON content with proper indentation
-  const content = JSON.stringify(tokenObject, null, exportConfiguration.indent)
+  const content = `${JSON.stringify(tokenObject, null, exportConfiguration.indent)}\n`
 
   // For single file mode, themed files go directly in root with theme-based names
   const fileName = themePath ? `tokens.${themePath}.json` : 'tokens.json'
